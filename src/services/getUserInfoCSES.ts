@@ -4,11 +4,7 @@ import cheerio from 'cheerio';
 import config from '../config.json';
 
 const getUserInfoCSES = (userId: string): Promise<User> => {
-  const promise = axios.get(`https://${config.api_cses}/user/${userId}`, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
+  const promise = axios.get(`https://crossorigin.me/https://${config.api_cses}/user/${userId}`);
 
   const userInfo = promise
     .then(response => cheerio.load(response.data))
