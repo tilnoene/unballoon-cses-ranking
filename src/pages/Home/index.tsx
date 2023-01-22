@@ -12,6 +12,8 @@ import {
 } from './styles';
 import unballoonLogo from '../../assets/unballoon_logo.png';
 import RankingCard from '../../components/RankingCard';
+import api from '../../services/api';
+
 
 const Home = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -27,15 +29,21 @@ const Home = () => {
     return usersInfo;
   };
 
-  const getRankingData = async () => {
-    const usersInfo = await getUsersInfo(['44736', '69243', '44593']);
+  const getRankingData = () => {
+    api.get(`user`)
+      .then(response => {
+        const usersInfo: User[] = response.data;
 
-    usersInfo
-      .sort((a, b) => a.numberOfQuestions - b.numberOfQuestions)
-      .reverse();
+        usersInfo
+          .sort((a, b) => a.numberOfQuestions - b.numberOfQuestions)
+          .reverse();
 
-    setUsers(usersInfo);
-    setLoading(false);
+        setUsers(usersInfo);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   };
 
   useEffect(() => {
