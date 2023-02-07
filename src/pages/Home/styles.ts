@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ContainerPage = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   width: 100%;
   height: 150px;
   display: flex;
@@ -25,12 +25,27 @@ export const Header = styled.div`
   }
 `;
 
-export const ContainerLoading = styled.div`
+export const Footer = styled.footer`
   width: 100%;
-  height: calc(100vh - 150px);
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+`;
+
+export const ContainerLoading = styled.div`
+  width: 100%;
+  height: calc(100vh - 150px - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const ContainerRanking = styled.div`
@@ -40,7 +55,6 @@ export const ContainerRanking = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 `;
 
 export const Ranking = styled.div`

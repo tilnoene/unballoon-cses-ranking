@@ -15,6 +15,7 @@ export const Card = styled.div`
 
 export const CardPosition = styled.div`
   width: 40px;
+  padding-left: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +28,7 @@ export const CardRank = styled.div`
   justify-content: center;
 
   img {
-    width: 14px;
+    width: 16px;
   }
 `;
 
@@ -35,12 +36,11 @@ export const CardName = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 6px;
-
+  padding-left: 5px;
 `;
 
 export const CardNumberOfQuestions = styled.div`
-  width: 60px;
+  width: 64px;
   display: flex;
   align-items: center;
   justify-content: center;

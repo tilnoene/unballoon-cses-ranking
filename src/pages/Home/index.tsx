@@ -1,33 +1,26 @@
 import { useEffect, useState } from 'react';
-import LoadingBalloon from '../../components/LoadingBalloon';
 
-import getUserInfoCSES from '../../services/getUserInfoCSES';
+import LoadingBalloon from '../../components/LoadingBalloon';
+import RankingCard from '../../components/RankingCard';
 
 import {
   ContainerLoading,
   ContainerPage,
   ContainerRanking,
+  Footer,
   Header,
   Ranking,
 } from './styles';
-import unballoonLogo from '../../assets/unballoon_logo.png';
-import RankingCard from '../../components/RankingCard';
-import api from '../../services/api';
 
+import unballoonLogo from '../../assets/unballoon_logo.png';
+
+import api from '../../services/api';
 
 const Home = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const getUsersInfo = async (usersId: string[]) => {
-    var usersInfo: User[] = [];
-
-    for (let i = 0; i < usersId.length; i++) {
-      usersInfo.push(await getUserInfoCSES(usersId[i]));
-    }
-
-    return usersInfo;
-  };
+  const currentYear = new Date().getFullYear();
 
   const getRankingData = () => {
     api.get(`user`)
@@ -78,6 +71,10 @@ const Home = () => {
           </Ranking>
         </ContainerRanking>
       )}
+
+      <Footer>
+        <p>&copy; {currentYear} UnBalloon</p>
+      </Footer>
     </ContainerPage>
   );
 };
