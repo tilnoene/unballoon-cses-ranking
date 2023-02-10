@@ -56,7 +56,7 @@ const About = () => {
 
           <Text>
             Para receber seu bottom físico, participe de alguma maratona
-            presencial e avise os organizadores.
+            presencial e fale com os organizadores (Alberto ou Tiago).
           </Text>
         </Section>
 
