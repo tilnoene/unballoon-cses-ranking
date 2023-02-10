@@ -51,7 +51,7 @@ const About = () => {
             <a href="https://t.me/tilnoene" target="_blank" rel="noreferrer">
               Telegram
             </a>{' '}
-            ou Discord (tilnoene#5846).
+            ou Discord (tilnoene#5846 ou Lia♡#7079).
           </Text>
 
           <Text>
