@@ -12,7 +12,7 @@ import {
   Ranking,
 } from './styles';
 
-import unballoonLogo from '../../assets/unballoon_logo.png';
+import unballoonBrand from '../../assets/unballoon_brand.png';
 
 import api from '../../services/api';
 
@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <ContainerPage>
       <Header>
-        <img src={unballoonLogo} alt="Logo do grupo UnBalloon" />
+        <img src={unballoonBrand} alt="Grupo UnBalloon" />
         <h1>Ranking</h1>
       </Header>
 

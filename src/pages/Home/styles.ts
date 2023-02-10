@@ -7,16 +7,18 @@ export const ContainerPage = styled.div`
 
 export const Header = styled.header`
   width: 100%;
-  height: 150px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 6px;
+  padding-top: 14px;
 
   h1 {
     padding: 0;
-    margin: 6px 0;
-    font-size: 48px;
+    margin: 0;
+    font-size: 44px;
     font-weight: 600;
   }
 
