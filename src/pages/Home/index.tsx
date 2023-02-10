@@ -10,6 +10,7 @@ import {
   ContainerPage,
   ContainerRanking,
   Ranking,
+  Title,
 } from './styles';
 
 import api from '../../services/api';
@@ -49,7 +50,8 @@ const Home = () => {
         </ContainerLoading>
       ) : (
         <ContainerRanking>
-          <h1>Ranking</h1>
+          <Title>Ranking</Title>
+
           <Ranking>
             {users.map((user, idx) => {
               return (

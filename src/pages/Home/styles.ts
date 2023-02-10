@@ -28,3 +28,9 @@ export const Ranking = styled.div`
   width: 100%;
   max-width: 420px;
 `;
+
+export const Title = styled.h1`
+  font-size: 42px;
+  margin: 0;
+  margin-bottom: 4px;
+`;
