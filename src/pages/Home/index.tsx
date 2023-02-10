@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import LoadingBalloon from '../../components/LoadingBalloon';
 import RankingCard from '../../components/RankingCard';
 
@@ -7,20 +9,14 @@ import {
   ContainerLoading,
   ContainerPage,
   ContainerRanking,
-  Footer,
-  Header,
   Ranking,
 } from './styles';
-
-import unballoonBrand from '../../assets/unballoon_brand.png';
 
 import api from '../../services/api';
 
 const Home = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const currentYear = new Date().getFullYear();
 
   const getRankingData = () => {
     api.get(`user`)
@@ -45,10 +41,7 @@ const Home = () => {
 
   return (
     <ContainerPage>
-      <Header>
-        <img src={unballoonBrand} alt="Grupo UnBalloon" />
-        <h1>Ranking</h1>
-      </Header>
+      <Header />
 
       {loading ? (
         <ContainerLoading>
@@ -56,6 +49,7 @@ const Home = () => {
         </ContainerLoading>
       ) : (
         <ContainerRanking>
+          <h1>Ranking</h1>
           <Ranking>
             {users.map((user, idx) => {
               return (
@@ -72,9 +66,7 @@ const Home = () => {
         </ContainerRanking>
       )}
 
-      <Footer>
-        <p>&copy; {currentYear} UnBalloon</p>
-      </Footer>
+      <Footer />
     </ContainerPage>
   );
 };
