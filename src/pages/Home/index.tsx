@@ -22,7 +22,13 @@ const Home = () => {
   const getRankingData = () => {
     api.get(`user`)
       .then(response => {
-        const usersInfo: User[] = response.data;
+        const usersInfo: User[] = response.data.map((user: any) => {
+          return {
+            id: user.id,
+            username: user.username,
+            numberOfQuestions: user.number_of_questions,
+          }
+        });
 
         usersInfo
           .sort((a, b) => a.numberOfQuestions - b.numberOfQuestions)
@@ -44,7 +50,11 @@ const Home = () => {
     <ContainerPage>
       <Header />
 
-      {loading ? (
+      <ContainerLoading>
+        <p>O ranking está em manutenção :(</p>
+      </ContainerLoading>
+
+      {/* {loading ? (
         <ContainerLoading>
           <LoadingBalloon />
         </ContainerLoading>
@@ -66,7 +76,7 @@ const Home = () => {
             })}
           </Ranking>
         </ContainerRanking>
-      )}
+      )} */}
 
       <Footer />
     </ContainerPage>
