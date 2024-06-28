@@ -50,11 +50,7 @@ const Home = () => {
     <ContainerPage>
       <Header />
 
-      <ContainerLoading>
-        <p>O ranking está em manutenção :(</p>
-      </ContainerLoading>
-
-      {/* {loading ? (
+      {loading ? (
         <ContainerLoading>
           <LoadingBalloon />
         </ContainerLoading>
@@ -76,7 +72,7 @@ const Home = () => {
             })}
           </Ranking>
         </ContainerRanking>
-      )} */}
+      )}
 
       <Footer />
     </ContainerPage>
