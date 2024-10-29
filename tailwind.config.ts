@@ -8,9 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)", "sans-serif"]
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'metal': {
+          300: '#535a5f',
+          400: '#474d51',
+          500: '#3b4044',
+          600: '#2f3336',
+          700: '#232628',
+          800: '#222222',
+          900: '#0b0c0d'
+        }
       },
     },
   },
