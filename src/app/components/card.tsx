@@ -7,16 +7,16 @@ import silverMedal from '@/app/assets/silver-medal.png';
 import bronzeMedal from '@/app/assets/bronze-medal.png';
 import blankMedal from '@/app/assets/blank-medal.png';
 
-const getRankingMedal = (numberOfQuestions: number) => {
-  if (numberOfQuestions >= 300) {
+const getRankingMedal = (solvedProblems: number) => {
+  if (solvedProblems >= 300) {
     return emeraldMedal;
-  } else if (numberOfQuestions >= 275) {
+  } else if (solvedProblems >= 275) {
     return diamondMedal;
-  } else if (numberOfQuestions >= 200) {
+  } else if (solvedProblems >= 200) {
     return goldMedal;
-  } else if (numberOfQuestions >= 125) {
+  } else if (solvedProblems >= 125) {
     return silverMedal;
-  } else if (numberOfQuestions >= 50) {
+  } else if (solvedProblems >= 50) {
     return bronzeMedal;
   } else {
     return blankMedal;
@@ -34,7 +34,7 @@ export default function Card({ user }: { user: User }) {
         <p className='mx-4'>{user.placing}</p>
 
         <Image
-          src={getRankingMedal(user.numberOfQuestions)}
+          src={getRankingMedal(user.solvedProblems)}
           width={16}
           height={16}
           alt=''
@@ -44,7 +44,7 @@ export default function Card({ user }: { user: User }) {
           {user.username}
         </p>
 
-        <p className='mx-4'>{user.numberOfQuestions}</p>
+        <p className='mx-4'>{user.solvedProblems}</p>
       </div>
     </a>
   );

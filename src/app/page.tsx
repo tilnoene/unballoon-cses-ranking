@@ -1,21 +1,17 @@
 import Card from './components/card';
-import Header from './components/header';
 import LastUpdate from './components/lastUpdate';
 
 import { exampleUsers } from './utils';
 
 import dayjs from 'dayjs';
-import Footer from './components/footer';
 
 export default async function Home() {
-  await new Promise((r) => setTimeout(r, 10000));
+  await new Promise((r) => setTimeout(r, 1000));
 
   const users = exampleUsers;
 
   return (
-    <div className='flex min-h-screen flex-1 flex-col items-center'>
-      <Header />
-
+    <div className='flex flex-col items-center'>
       <div className='flex flex-col items-center gap-2'>
         <h1 className='text-4xl font-bold'>Ranking</h1>
 
@@ -27,8 +23,6 @@ export default async function Home() {
           <Card key={user.id} user={user} />
         ))}
       </div>
-
-      <Footer />
     </div>
   );
 }

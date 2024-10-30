@@ -1,6 +1,6 @@
 type User = {
   id: string;
   username: string;
-  numberOfQuestions: number;
+  solvedProblems: number;
   placing: number;
 }
