@@ -1,7 +1,7 @@
 import dayjs, { Dayjs } from 'dayjs';
 
 export default function LastUpdate({ lastUpdate }: { lastUpdate: Dayjs }) {
-  const minutes = lastUpdate.diff(dayjs(), 'minute');
+  const minutes = dayjs().diff(lastUpdate, 'minute');
 
   return (
     <i className='text-sm text-neutral-300'>

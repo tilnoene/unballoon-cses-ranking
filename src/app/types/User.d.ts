@@ -3,4 +3,4 @@ type User = {
   username: string;
   solvedProblems: number;
   placing: number;
-}
+};
