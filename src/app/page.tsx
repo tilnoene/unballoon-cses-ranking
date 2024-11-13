@@ -13,7 +13,7 @@ export default async function Home() {
   // await new Promise((r) => setTimeout(r, 1000));
 
   const response = await fetch(
-    process.env.API_URL ? process.env.API_URL.concat('user') : '',
+    process.env.API_URL ? process.env.API_URL.concat('/user') : '',
     {
       cache: 'no-store',
     }
